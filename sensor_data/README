@@ -1,0 +1,14 @@
+Data acquired from the Arduino Nano 33 BLE sensors
+
+Columns:
+  Millis: Number of milliseconds ellapsed since the Arduino was powered on
+  Sensor: Sensor type: A (Accelerometer), M (Magnetometer), G (Gyroscope)
+  X: X component of the sensor reading
+  Y: Y component of the sensor reading
+  Z: Z component of the sensor reading
+
+The Magnetoscope has a lower acquisition frequency than the other two sensors, so there are less readings of this sensor in the data.
+  
+The data was acquired placing the arduino Nano in the lateral of the washing machine with a double sided tape.
+
+The machine ran with water but without clothes. Another data acquisition with clothes must be performed.
