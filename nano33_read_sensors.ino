@@ -6,32 +6,33 @@ void read_sensors() {
   // by the ESP32 into an SD card
   
   float x, y, z;
-  
-  Serial.print(millis());
-  Serial.print(",");
-  
+
   if (IMU.magneticFieldAvailable()) {
     IMU.readMagneticField(x, y, z);
+    Serial.print(millis());
+    Serial.print(",M,");
     Serial.print(x);
     Serial.print(",");
     Serial.print(y);
     Serial.print(",");
-    Serial.print(z);
-    Serial.print(",");
+    Serial.println(z);
   }
 
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(x, y, z);
+    Serial.print(millis());
+    Serial.print(",G,");
     Serial.print(x);
     Serial.print(",");
     Serial.print(y);
     Serial.print(",");
-    Serial.print(z);
-    Serial.print(",");
+    Serial.println(z);
   }
 
   if (IMU.accelerationAvailable()) {
     IMU.readAcceleration(x, y, z);
+    Serial.print(millis());
+    Serial.print(",A,");
     Serial.print(x);
     Serial.print(",");
     Serial.print(y);
@@ -51,11 +52,11 @@ void setup() {
   }
 
   // File header
-  Serial.println("Millis, Mag X, Mag Y, Mag Z, Gyr X, Gyr Y, Gyr Z, Acc X, Acc Y, Acc Z");
+  Serial.println("Millis,Sensor,X,Y,Z");
   
 }
 
 void loop() {
   read_sensors();
-  delay(10);
+  delay(1);
 }
