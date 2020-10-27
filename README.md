@@ -24,3 +24,25 @@ TODO:
 - Upload data to The things network using the provided LORA module
 
 - Make an App that gets the data from The Things Network and shows the user the availability of the washing machine.
+
+Analysis of the data:
+
+After analyzing the three sensors, the accelerometer is the one that gives best results to distinguish when the machine is working.
+
+We have recorded accelerometer data in the following scenarios:
+
+- Collect Water + Prewash
+- Collect Water + Main Wash
+- Main Wash + Remove water
+- Start centifugating
+- Centrifugate and slowdown
+
+The next plots compare the intensities of the accelerometer in all this scenarios (in blue) and compares them to the intensities when the machine is off (in red)
+
+We can observe that in all cases there is a significant difference in amplitudes, specially in the Z axis.
+
+![](images/collect_water_and_prewash_accelerometer.png?raw=true "Title")
+![](images/collect_water_and_mainwash_accelerometer.png?raw=true "Title")
+![](images/mainwash_and_remove_water_accelerometer.png?raw=true "Title")
+![](images/start_centrif_accelerometer.png?raw=true "Title")
+![](images/centrif_and_slowdown_accelerometer.png?raw=true "Title")
